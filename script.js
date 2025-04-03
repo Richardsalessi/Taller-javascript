@@ -16,18 +16,24 @@
     render();
     }
 
+    function deleteTodo(id) {
+    todos = todos.filter(todo => todo.id !== id);
+    render();
+    }
+
     function render() {
     const list = document.getElementById("todo-list");
     list.innerHTML = "";
 
     todos.forEach(todo => {
-    const item = document.createElement("div");
-    item.className = "todo-item";
+        const item = document.createElement("div");
+        item.className = "todo-item";
 
-    item.innerHTML = `
+        item.innerHTML = `
         <span>${todo.title} (${todo.dueDate})</span>
-    `;
+        <button onclick="deleteTodo('${todo.id}')">Eliminar</button>
+        `;
 
-    list.appendChild(item);
+        list.appendChild(item);
     });
     }
