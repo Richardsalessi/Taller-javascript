@@ -21,6 +21,17 @@
     render();
     }
 
+    function editTodo(id) {
+    const newTitle = prompt("Edita la tarea:");
+    if (newTitle) {
+        const todo = todos.find(t => t.id === id);
+        if (todo) {
+        todo.title = newTitle;
+        render();
+        }
+    }
+    }
+
     function render() {
     const list = document.getElementById("todo-list");
     list.innerHTML = "";
@@ -31,7 +42,10 @@
 
         item.innerHTML = `
         <span>${todo.title} (${todo.dueDate})</span>
-        <button onclick="deleteTodo('${todo.id}')">Eliminar</button>
+        <div>
+            <button onclick="editTodo('${todo.id}')">Editar</button>
+            <button onclick="deleteTodo('${todo.id}')">Eliminar</button>
+        </div>
         `;
 
         list.appendChild(item);
