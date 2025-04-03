@@ -32,17 +32,28 @@
     }
     }
 
+    function toggleCompleted(id) {
+    const todo = todos.find(t => t.id === id);
+    if (todo) {
+        todo.completed = !todo.completed;
+        render();
+    }
+    }
+
     function render() {
     const list = document.getElementById("todo-list");
     list.innerHTML = "";
 
     todos.forEach(todo => {
         const item = document.createElement("div");
-        item.className = "todo-item";
+        item.className = "todo-item" + (todo.completed ? " completed" : "");
 
         item.innerHTML = `
         <span>${todo.title} (${todo.dueDate})</span>
         <div>
+            <button onclick="toggleCompleted('${todo.id}')">
+            ${todo.completed ? "Desmarcar" : "Completado"}
+            </button>
             <button onclick="editTodo('${todo.id}')">Editar</button>
             <button onclick="deleteTodo('${todo.id}')">Eliminar</button>
         </div>
