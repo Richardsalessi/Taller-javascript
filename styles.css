@@ -1,41 +1,175 @@
-body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    background: #f4f4f4;
+    /* General */
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: #f9fafb;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
     }
-
-h1 {
-    text-align: center;
+    
+    /* Header */
+    header {
+        background-color: #4f46e5;
+        color: white;
+        padding: 30px 20px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
-
-.form {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
+    
+    h1 {
+        margin: 0;
+        font-size: 2.5rem;
     }
-
-input, button {
-    padding: 10px;
-    font-size: 16px;
+    
+    .subtitulo {
+        margin-top: 10px;
+        font-size: 1rem;
+        font-weight: 300;
+        color: #e0e7ff;
     }
-
-.list {
-    max-width: 600px;
-    margin: 0 auto;
+    
+    /* Main */
+    main {
+        flex: 1;
+        padding: 30px 20px;
     }
-
-.todo-item {
-    display: flex;
-    justify-content: space-between;
-    background: white;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    
+    /* Formulario */
+    .form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 30px;
     }
-
-.completed {
-    text-decoration: line-through;
-    color: gray;
-}
+    
+    input, button {
+        padding: 10px 15px;
+        font-size: 16px;
+        border-radius: 6px;
+        border: 1px solid #d1d5db;
+    }
+    
+    input:focus {
+        outline: none;
+        border-color: #6366f1;
+    }
+    
+    button {
+        background-color: #6366f1;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+    
+    button:hover {
+        background-color: #4f46e5;
+    }
+    
+    /* Lista */
+    .list {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    
+    .todo-item {
+        background: white;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+    
+    .todo-item.completed span {
+        text-decoration: line-through;
+        color: #9ca3af;
+    }
+    
+    .todo-item div button {
+        margin-left: 8px;
+    }
+    
+    .todo-item div button:nth-child(1) {
+        background-color: #10b981;
+    }
+    
+    .todo-item div button:nth-child(2) {
+        background-color: #6b7280;
+    }
+    
+    .todo-item div button:nth-child(3) {
+        background-color: #ef4444;
+    }
+    
+    /* Footer */
+    footer {
+        background: #111827;
+        color: #9ca3af;
+        text-align: center;
+        padding: 15px;
+        font-size: 14px;
+    }
+    
+    /* Modal */
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+    }
+    
+    .modal-content {
+        background: white;
+        padding: 20px 30px;
+        border-radius: 10px;
+        width: 300px;
+        text-align: center;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+    
+    .modal-content h2 {
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+    
+    .modal-content input {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    
+    .modal-buttons button {
+        padding: 8px 15px;
+        margin: 0 5px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    
+    .modal-buttons button:first-child {
+        background-color: #10b981;
+        color: white;
+    }
+    
+    .modal-buttons button:last-child {
+        background-color: #ef4444;
+        color: white;
+    }
+    
+    .hidden {
+        display: none;
+    }
+    

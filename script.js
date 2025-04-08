@@ -1,4 +1,5 @@
     let todos = [];
+    let editId = null;
 
     function addTodo() {
     const titleInput = document.getElementById("todo-title");
@@ -22,14 +23,29 @@
     }
 
     function editTodo(id) {
-    const newTitle = prompt("Edita la tarea:");
-    if (newTitle) {
-        const todo = todos.find(t => t.id === id);
+    const todo = todos.find(t => t.id === id);
+    if (todo) {
+        editId = id;
+        document.getElementById("edit-input").value = todo.title;
+        document.getElementById("edit-modal").classList.remove("hidden");
+    }
+    }
+
+    function confirmEdit() {
+    const newTitle = document.getElementById("edit-input").value.trim();
+    if (newTitle && editId) {
+        const todo = todos.find(t => t.id === editId);
         if (todo) {
         todo.title = newTitle;
         render();
+        closeModal();
         }
     }
+    }
+
+    function closeModal() {
+    document.getElementById("edit-modal").classList.add("hidden");
+    editId = null;
     }
 
     function toggleCompleted(id) {
