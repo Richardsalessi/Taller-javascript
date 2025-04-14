@@ -1,43 +1,48 @@
-    <!DOCTYPE html>
-    <html lang="es">
-    <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mi To-Do App</title>
-    <link rel="stylesheet" href="styles.css" />
-    </head>
-    <body>
-    <header>
-        <h1>Mi Lista de Tareas</h1>
-        <p class="subtitulo">Organiza tu día con estilo ✨</p>
-    </header>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mis Entregas Universitarias</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+    <h1>Mis Entregas Universitarias</h1>
+    <p class="subtitulo">Lleva el control de tus trabajos y tareas académicas 📚</p>
+</header>
 
-    <main>
-        <section class="form">
-        <input id="todo-title" type="text" placeholder="Escribe una nueva tarea" />
-        <input id="date-picker" type="date" />
-        <button onclick="addTodo()">Agregar</button>
-        </section>
+<main>
+    <section class="form">
+    <input id="todo-title" type="text" placeholder="Nombre de la entrega" />
+    <input id="date-picker" type="date" />
+    <button onclick="addTodo()">Agregar</button>
+    <button onclick="exportarTareas()">Exportar tareas</button>
+    </section>
 
-        <section id="todo-list" class="list"></section>
-    </main>
-
-    <footer>
-        <p>Taller de manipulación del DOM</p>
-    </footer>
-
-    <!-- Modal para editar tarea -->
-    <div id="edit-modal" class="modal hidden">
-        <div class="modal-content">
-        <h2>Editar tarea</h2>
-        <input type="text" id="edit-input" />
-        <div class="modal-buttons">
-            <button onclick="confirmEdit()">Guardar</button>
-            <button onclick="closeModal()">Cancelar</button>
-        </div>
-        </div>
+    <div class="status">
+    <span id="pendientes"></span>
     </div>
 
-    <script src="script.js"></script>
-    </body>
-    </html>
+    <section id="todo-list" class="list"></section>
+</main>
+
+<footer>
+    <p>Taller de manipulación del DOM</p>
+</footer>
+
+<!-- Modal para editar -->
+<div id="edit-modal" class="modal hidden">
+    <div class="modal-content">
+    <h2>Editar entrega</h2>
+    <input type="text" id="edit-input" />
+    <div class="modal-buttons">
+        <button onclick="confirmEdit()">Guardar</button>
+        <button onclick="closeModal()">Cancelar</button>
+    </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

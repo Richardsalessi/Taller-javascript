@@ -1,4 +1,3 @@
-    /* General */
     body {
         margin: 0;
         font-family: 'Segoe UI', sans-serif;
@@ -8,73 +7,61 @@
         flex-direction: column;
         min-height: 100vh;
     }
-    
-    /* Header */
+
     header {
         background-color: #4f46e5;
         color: white;
         padding: 30px 20px;
         text-align: center;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
-    
+
     h1 {
         margin: 0;
         font-size: 2.5rem;
     }
-    
+
     .subtitulo {
         margin-top: 10px;
         font-size: 1rem;
-        font-weight: 300;
         color: #e0e7ff;
     }
-    
-    /* Main */
+
     main {
         flex: 1;
         padding: 30px 20px;
     }
-    
-    /* Formulario */
+
     .form {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
-    
+
     input, button {
         padding: 10px 15px;
         font-size: 16px;
         border-radius: 6px;
         border: 1px solid #d1d5db;
     }
-    
-    input:focus {
-        outline: none;
-        border-color: #6366f1;
-    }
-    
+
     button {
         background-color: #6366f1;
         color: white;
         border: none;
         cursor: pointer;
-        transition: background 0.2s;
     }
-    
+
     button:hover {
         background-color: #4f46e5;
     }
-    
-    /* Lista */
+
     .list {
         max-width: 700px;
         margin: 0 auto;
     }
-    
+
     .todo-item {
         background: white;
         padding: 15px;
@@ -85,72 +72,75 @@
         align-items: center;
         box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     }
-    
+
     .todo-item.completed span {
         text-decoration: line-through;
         color: #9ca3af;
     }
-    
-    .todo-item div button {
-        margin-left: 8px;
+
+    .todo-item.alerta span {
+        color: #f59e0b;
     }
-    
+
+    .todo-item.vencida span {
+        color: #dc2626;
+    }
+
+    .todo-item div button {
+        margin-left: 5px;
+    }
+
     .todo-item div button:nth-child(1) {
         background-color: #10b981;
     }
-    
+
     .todo-item div button:nth-child(2) {
         background-color: #6b7280;
     }
-    
+
     .todo-item div button:nth-child(3) {
         background-color: #ef4444;
     }
-    
-    /* Footer */
+
+    .status {
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
     footer {
         background: #111827;
         color: #9ca3af;
         text-align: center;
         padding: 15px;
-        font-size: 14px;
     }
-    
-    /* Modal */
+
     .modal {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
         background: rgba(0,0,0,0.6);
         display: flex;
         justify-content: center;
         align-items: center;
         z-index: 10;
     }
-    
+
     .modal-content {
         background: white;
         padding: 20px 30px;
         border-radius: 10px;
         width: 300px;
         text-align: center;
-        box-shadow: 0 6px 12px rgba(0,0,0,0.2);
     }
-    
-    .modal-content h2 {
-        margin-top: 0;
-        margin-bottom: 15px;
-    }
-    
+
     .modal-content input {
         width: 100%;
         padding: 10px;
         font-size: 16px;
         margin-bottom: 15px;
     }
-    
+
     .modal-buttons button {
         padding: 8px 15px;
         margin: 0 5px;
@@ -158,18 +148,17 @@
         border-radius: 6px;
         cursor: pointer;
     }
-    
+
     .modal-buttons button:first-child {
         background-color: #10b981;
         color: white;
     }
-    
+
     .modal-buttons button:last-child {
         background-color: #ef4444;
         color: white;
     }
-    
+
     .hidden {
         display: none;
     }
-    
